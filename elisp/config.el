@@ -173,10 +173,12 @@
 (require 'org-config)
 (require 'languages-config)
 (require 'evil-config)
-(require 'mail-config)
 (require 'misc-packages-config)
 (require 'ui-config)
 (require 'my-functions)
+
+(unless (eq system-type 'darwin)
+  (require 'mail-config))
 
 ;; Load theme
 (load-theme 'ef-arbutus :no-confirm)
