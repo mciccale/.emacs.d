@@ -18,11 +18,15 @@
 
 ;; Auto-match parentheses
 (use-package smartparens
+  :ensure t
+  :straight t
   :hook (prog-mode text-mode markdown-mode ciao-mode ciao-inferior-mode)
   :config (require 'smartparens-config))
 
 ;; Snippets
 (use-package yasnippet
+  :ensure t
+  :straight t
   :config (setq yas-snippet-dirs '("~/.emacs.d/snippets")))
 
 ;; Load Yasnippet
@@ -47,8 +51,10 @@
               ("C-c C-f" . my/slides-presentation))
   :hook (pdf-view-mode . (lambda ()
                            (set (make-local-variable 'evil-emacs-state-cursor) (list nil))
-                           (setq display-line-numbers-mode nil)))
-  :config (setq pdf-view-use-scaling nil))
+                           (setq display-line-numbers-mode nil)
+						   (if (eq system-type 'darwin)
+							   (setq pdf-view-use-scaling t)
+							 (setq pdf-view-use-scaling nil)))))
 
 ;; Install/load PDF-tools
 (require 'pdf-tools)

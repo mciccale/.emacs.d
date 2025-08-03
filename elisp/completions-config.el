@@ -6,6 +6,10 @@
   :hook
   (after-init . which-key-mode))
 
+(use-package swiper
+  :ensure t
+  :straight t)
+
 (use-package ivy
   :ensure t
   :straight t

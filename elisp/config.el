@@ -102,13 +102,11 @@
               (message "Emacs has fully loaded. This code runs after startup.")
               (with-current-buffer (get-buffer-create "*scratch*")
                 (insert (format
-                         ";;    Welcome to Emacs!
+                         ";; Welcome to Emacs!
 ;;
-;;    Loading time : %s
-;;    Packages     : %s
+;; Loading time : %s
 "
-                         (emacs-init-time)
-                         (number-to-string (length package-activated-list))))))))
+                         (emacs-init-time)))))))
 
 ;; Centralize backup files under .emacs.d
 (setopt make-backup-file-name-function
@@ -181,6 +179,11 @@
   (require 'mail-config))
 
 ;; Load theme
+(use-package ef-themes
+  :ensure t
+  :straight t
+  :defer t)
+
 (load-theme 'ef-arbutus :no-confirm)
 
 ;; Provide ourselves
