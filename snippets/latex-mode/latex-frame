@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: latex-frame
+# key: <frame
+# --
+
+\begin{frame}{${1:title}}
+  $0
+\end{frame}

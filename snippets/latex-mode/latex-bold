@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: latex-bold
+# key: <bf
+# --
+
+\textbf{$0}

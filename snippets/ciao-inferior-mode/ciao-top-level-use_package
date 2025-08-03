@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ciao-top-level-use_package
+# key: <usep
+# --
+use_package($0).

@@ -1,0 +1,27 @@
+# Attic
+Attic/
+
+# Package managers and build artifacts
+elpa/
+straight/
+.cache/
+eln-cache/
+
+# Not the mail config
+elisp/mail-config.el
+
+# Emacs session files
+auto-save-list/
+emacs-backup/
+multisession/
+transient/
+history
+recentf
+places
+tramp
+projects
+network-security.data
+
+# OS-specific files
+*~
+.DS_Store

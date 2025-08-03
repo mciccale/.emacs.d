@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ciao-top-level-use_module
+# key: <usem
+# --
+use_module($0).

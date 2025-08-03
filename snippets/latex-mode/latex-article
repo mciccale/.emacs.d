@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: latex-article
+# key: <article
+# --
+
+\documentclass{article}
+
+\title{${1:title}}
+\author{${2:author}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+$0
+
+\end{document}

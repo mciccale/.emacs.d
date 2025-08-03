@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: latex-par
+# key: <par
+# --
+\paragraph{${1:title}}
+%
+$0

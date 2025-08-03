@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ciao-export
+# key: <ex
+# --
+:- export($1).

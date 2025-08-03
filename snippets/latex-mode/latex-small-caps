@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: latex-small-caps
+# key: <sc
+# --
+\textsc{$0}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ciao-use-module
+# key: <usem
+# --
+:- use_module(${1:module}$0).

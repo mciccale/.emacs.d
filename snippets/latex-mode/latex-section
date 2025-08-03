@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: latex-section
+# key: <sec
+# --
+
+\section{${1:title}}
+\label{sec:$1}
+
+$0

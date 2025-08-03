@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ciao-fdl
+# key: <fdl
+# --
+( % (failure-driven loop)
+  $1
+; true )
