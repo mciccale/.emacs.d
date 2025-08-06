@@ -6,6 +6,8 @@ elpa/
 straight/
 .cache/
 eln-cache/
+tree-sitter/
+.lsp-session
 
 # Not the mail config
 elisp/mail-config.el
