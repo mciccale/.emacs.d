@@ -149,7 +149,7 @@
 (use-package dired
   :ensure nil
   :custom
-  (dired-listing-switches "-lah --group-directories-first")
+  (dired-listing-switches "-lahv --group-directories-first")
   (dired-dwim-target t)
   ;; (dired-kill-when-opening-new-dired-buffer t)
   :config
