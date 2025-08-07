@@ -31,7 +31,7 @@
   (lsp-completion-provider :none)
   (lsp-session-file (locate-user-emacs-file ".lsp-session"))
   (lsp-log-io nil)
-  (lsp-idle-delay 0.5)
+  (lsp-idle-delay 0.500)
   (lsp-keep-workspace-alive nil)
   ;; Core settings
   (lsp-enable-xref t)
