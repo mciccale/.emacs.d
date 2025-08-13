@@ -4,6 +4,8 @@
 (if (file-exists-p "~/clip/Systems/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el")
   (load-file "~/clip/Systems/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el"))
 
+(add-hook 'ciao-mode-hook #'display-line-numbers-mode)
+
 (use-package treesit-auto
   :ensure t
   :straight t

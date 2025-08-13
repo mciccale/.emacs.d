@@ -62,6 +62,7 @@
   :hook
   (prog-mode . display-line-numbers-mode)
   :config
+  (setq system-time-locale "C")
   (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 120)
   (when (eq system-type 'darwin)
     (setq mac-command-modifier 'meta)
