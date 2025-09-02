@@ -45,8 +45,8 @@
   (inhibit-startup-message t)                ;; Disable the startup message when Emacs launches.
   (initial-scratch-message "")               ;; Clear the initial message in the *scratch* buffer.
   (ispell-dictionary "en_US")                ;; Set the default dictionary for spell checking.
-  (pixel-scroll-precision-mode t)            ;; Enable precise pixel scrolling.
-  (pixel-scroll-precision-use-momentum nil)  ;; Disable momentum scrolling for pixel precision.
+  ;; (pixel-scroll-precision-mode t)            ;; Enable precise pixel scrolling.
+  ;; (pixel-scroll-precision-use-momentum nil)  ;; Disable momentum scrolling for pixel precision.
   (ring-bell-function 'ignore)               ;; Disable the audible bell.
   (switch-to-buffer-obey-display-actions t)  ;; Make buffer switching respect display actions.
   (tab-width 4)                              ;; Set the tab width to 4 spaces.
