@@ -62,9 +62,9 @@
   ;; Lens settings
   (lsp-lens-enable t)                                   ;; Enable lens support.
   ;; Headerline settings
-  (lsp-headerline-breadcrumb-enable nil)   ;; Enable symbol numbers in the headerline.
+  (lsp-headerline-breadcrumb-enable nil)                ;; Enable symbol numbers in the headerline.
   ;; Semantic settings
-  (lsp-semantic-tokens-enable t))                     ;; Disable semantic tokens.
+  (lsp-semantic-tokens-enable t))                       ;; Disable semantic tokens.
 
 ;; Lean4
 (use-package lean4-mode

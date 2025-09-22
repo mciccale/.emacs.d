@@ -106,6 +106,7 @@
                          ";; Welcome to Emacs!
 ;;
 ;; Loading time : %s
+
 "
                          (emacs-init-time)))))))
 
@@ -185,7 +186,7 @@
   :straight t
   :defer t)
 
-(load-theme 'ef-arbutus :no-confirm)
+(load-theme 'ef-melissa-light :no-confirm)
 
 ;; Provide ourselves
 (provide 'config)
