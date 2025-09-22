@@ -186,7 +186,7 @@
   :straight t
   :defer t)
 
-(load-theme 'ef-melissa-light :no-confirm)
+(load-theme 'ef-arbutus :no-confirm)
 
 ;; Provide ourselves
 (provide 'config)
