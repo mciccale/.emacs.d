@@ -3,5 +3,5 @@
 # key: <fdl
 # --
 ( % (failure-driven loop)
-  $1
+  $0
 ; true )

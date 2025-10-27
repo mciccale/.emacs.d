@@ -2,5 +2,5 @@
 # name: ciao-module
 # key: <mod
 # --
-:- module(${1:name},${2:exports},[${3:packages}]).
-$0
+:- module($0, [$1], [$2]).
+$3
