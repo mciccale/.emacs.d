@@ -117,9 +117,9 @@
   :hook (pdf-view-mode . (lambda ()
                            (set (make-local-variable 'evil-emacs-state-cursor) (list nil))
                            (setq display-line-numbers-mode nil)
-						   (if (eq system-type 'darwin)
-							   (setq pdf-view-use-scaling t)
-							 (setq pdf-view-use-scaling nil)))))
+                           (if (eq system-type 'darwin)
+                               (setq pdf-view-use-scaling t)
+                             (setq pdf-view-use-scaling nil)))))
 
 ;; Install/load PDF-tools
 (require 'pdf-tools)
@@ -132,27 +132,27 @@
   :straight t
   :hook
   (LaTeX-mode . (lambda ()
-				  (pdf-tools-install) ;; TODO: Redundant?
-				  (outline-minor-mode 1)
+                  (pdf-tools-install) ;; TODO: Redundant?
+			      (outline-minor-mode 1)
 				  (display-line-numbers-mode 1)
 				  (add-hook 'pdf-view-mode-hook
-							(lambda () (display-line-numbers-mode -1))
-							:append :local)
+			   			    (lambda () (display-line-numbers-mode -1))
+						    :append :local)
 
-				  (setq fill-column 70)
-				  (setq TeX-auto-save t
-						TeX-parse-self t
-						TeX-show-compilation nil
-						TeX-global-PDF-mode t
-						TeX-clean-confirm nil
-						TeX-command-default "LaTeX"
-						TeX-view-program-selection '((output-pdf "PDF Tools"))
-						TeX-source-correlate-mode t
-						TeX-source-correlate-method '((dvi . source-specials)
-													  (pdf . synctex))
-						TeX-source-correlate-start-server t)
+       	          (setq fill-column 70)
+                  (setq TeX-auto-save t
+                        TeX-parse-self t
+                        TeX-show-compilation nil
+                        TeX-global-PDF-mode t
+                        TeX-clean-confirm nil
+                        TeX-command-default "LaTeX"
+                        TeX-view-program-selection '((output-pdf "PDF Tools"))
+                        TeX-source-correlate-mode t
+                        TeX-source-correlate-method '((dvi . source-specials)
+                                                      (pdf . synctex))
+                        TeX-source-correlate-start-server t)
 
-				  (local-set-key (kbd "M-q") #'LaTeX-fill-paragraph))))
+                  (local-set-key (kbd "M-q") #'LaTeX-fill-paragraph))))
 
 (add-hook 'TeX-after-compilation-finished-functions
           #'TeX-revert-document-buffer)

@@ -14,13 +14,14 @@
   :ensure t
   :straight t
   :diminish
-  :bind (("C-s" . swiper-isearch)
-		 :map ivy-minibuffer-map
-		 ("TAB" . ivy-alt-done)	
-		 :map ivy-switch-buffer-map
-		 ("C-d" . ivy-switch-buffer-kill)
-		 :map ivy-reverse-i-search-map
-		 ("C-d" . ivy-reverse-i-search-kill)))
+  :bind
+  (("C-s" . swiper-isearch)
+   :map ivy-minibuffer-map
+   ("TAB" . ivy-alt-done)
+   :map ivy-switch-buffer-map
+   ("C-d" . ivy-switch-buffer-kill)
+   :map ivy-reverse-i-search-map
+   ("C-d" . ivy-reverse-i-search-kill)))
 (require 'ivy)
 (ivy-mode 1)
 

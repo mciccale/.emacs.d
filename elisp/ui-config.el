@@ -35,7 +35,6 @@
   (nerd-icons-completion-mode)
   (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
 
-
 ;; Provide ourselves
 (provide 'ui-config)
 

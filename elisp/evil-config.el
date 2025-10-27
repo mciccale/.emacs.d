@@ -9,10 +9,10 @@
   (after-init . evil-mode)
   :init
   (setq evil-want-integration t
-	    evil-want-keybinding nil
-		evil-want-fine-undo t
-	    evil-want-C-u-scroll t
-	    evil-want-C-i-jump nil)
+        evil-want-keybinding nil
+        evil-want-fine-undo t
+        evil-want-C-u-scroll t
+        evil-want-C-i-jump nil)
   :config
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)

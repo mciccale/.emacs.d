@@ -69,6 +69,7 @@
   (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 120)
   (when (eq system-type 'darwin)
     (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier 'none)
     (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 150))
 
   (setq custom-file (locate-user-emacs-file "custom-vars.el")) ;; Specify the custom file path.
@@ -114,15 +115,15 @@
 
 ;; Centralize backup files under .emacs.d
 (setopt make-backup-file-name-function
-	(lambda (fpath)
-	  (let* ((backupRootDir (concat user-emacs-directory "emacs-backup/"))
-		 (filePath (replace-regexp-in-string "[A-Za-z]:" "" fpath ))
-		 (backupFilePath
-		  (replace-regexp-in-string
-		   "//" "/" (concat backupRootDir filePath "~"))))
-	    (make-directory (file-name-directory backupFilePath)
-			    (file-name-directory backupFilePath))
-	    backupFilePath)))
+	    (lambda (fpath)
+	      (let* ((backupRootDir (concat user-emacs-directory "emacs-backup/"))
+		         (filePath (replace-regexp-in-string "[A-Za-z]:" "" fpath ))
+		         (backupFilePath
+		          (replace-regexp-in-string
+		           "//" "/" (concat backupRootDir filePath "~"))))
+	        (make-directory (file-name-directory backupFilePath)
+			                (file-name-directory backupFilePath))
+	        backupFilePath)))
 
 (use-package window
   :ensure nil
