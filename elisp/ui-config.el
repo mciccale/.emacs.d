@@ -17,7 +17,7 @@
 
 (use-package nerd-icons
   :ensure t
-  :straight t 
+  :straight t
   :defer t)
 
 (use-package nerd-icons-dired

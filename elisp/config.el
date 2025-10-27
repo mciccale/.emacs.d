@@ -61,6 +61,9 @@
   (calendar-week-start-day 1)                ;; Who the hell thinks that weeks start on Sundays???
   :hook
   (prog-mode . display-line-numbers-mode)
+  (prog-mode . (lambda () (setq show-trailing-whitespace t)))
+  (text-mode . (lambda () (setq show-trailing-whitespace t)))
+  (ciao-mode . (lambda () (setq show-trailing-whitespace t)))
   :config
   (setq system-time-locale "C")
   (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 120)
@@ -79,9 +82,8 @@
   (tool-bar-mode 0)
   (when scroll-bar-mode
     (scroll-bar-mode 0))
-  
+
   (global-hl-line-mode -1)     ;; Disable highlight of the current line
-  ;; (global-auto-revert-mode 1)  ;; Enable global auto-revert mode
   (recentf-mode 1)             ;; Enable tracking of recently opened files.
   (savehist-mode 1)            ;; Enable saving of command history.
   (save-place-mode 1)          ;; Enable saving the place in files for easier return.

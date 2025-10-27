@@ -11,12 +11,16 @@
   :straight t
   :after emacs
   :custom
-  (treesit-auto-install 'prompt)
+  (treesit-auto-install nil)
   :init
-  (setq treesit-language-source-alist '((json "https://github.com/tree-sitter/tree-sitter-json")))
+  (setq treesit-language-source-alist
+        '(;; (c          . ("https://github.com/tree-sitter/tree-sitter-c"          "v0.20.7" "src"))
+          (haskell    . ("https://github.com/tree-sitter/tree-sitter-haskell"    "master"  "src"))
+          (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1" "src"))
+          (json       . ("https://github.com/tree-sitter/tree-sitter-json"       "v0.24.8" "src"))
+          (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "master"  "typescript/src"))))
   :config
-  (setq treesit-auto-langs '(json toml yaml))
-  (treesit-auto-add-to-auto-mode-alist 'all)
+  ;; (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode t))
 
 ;; LSP
@@ -24,9 +28,10 @@
   :ensure t
   :straight t
   :defer t
+  :commands (lsp lsp-deferred)
   :hook ((lsp-mode . lsp-enable-which-key-integration)
-         ((lean4-mode) . lsp-deferred))
-  :commands lsp
+         (lean4-mode . lsp-deferred)
+         (typescript-mode . lsp-deferred))
   :custom
   (lsp-keymap-prefix "C-c l")
   (lsp-inlay-hint-enable t)
@@ -85,11 +90,13 @@
 (use-package yasnippet
   :ensure t
   :straight t
-  :config (setq yas-snippet-dirs '("~/.emacs.d/snippets")))
-
-;; Load Yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
+  :config
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  (yas-reload-all)
+  :hook
+  ((prog-mode . yas-minor-mode-on)
+   (text-mode . yas-minor-mode-on)
+   (ciao-mode . yas-minor-mode-on)))
 
 ;; Markdown
 (use-package markdown-mode
