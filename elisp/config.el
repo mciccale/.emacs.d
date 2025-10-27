@@ -178,7 +178,6 @@
 (require 'evil-config)
 (require 'misc-packages-config)
 (require 'ui-config)
-(require 'my-functions)
 
 (unless (eq system-type 'darwin)
   (require 'mail-config))

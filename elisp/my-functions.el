@@ -1,11 +1,20 @@
 ;;; `my-functions.el' --- My own functions
 
-;; Decrypting accounts
 (defun my/get-pwd (&rest keys)
+  "Decrypt a password"
   (let ((result (apply #'auth-source-search keys)))
     (if result
         (funcall (plist-get (car result) :secret))
       nil)))
+
+(defun bootstrap-shell-path ()
+  "Bootstrap my shell's PATH into Emacs"
+  (let* ((shell-path-string (string-trim
+                            (shell-command-to-string
+                             "$SHELL --login -i -c 'printf \"%s\" $PATH'")))
+         (path-list (split-string shell-path-string path-separator t)))
+    (setenv "PATH" (string-join path-list path-separator))
+    (setq exec-path path-list)))
 
 ;; Local vars
 (defvar presentation-mode-active nil
