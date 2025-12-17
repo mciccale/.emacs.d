@@ -3,21 +3,57 @@
 ;; Ciao
 (if (file-exists-p "~/clip/Systems/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el")
   (load-file "~/clip/Systems/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el"))
-
 (add-hook 'ciao-mode-hook #'display-line-numbers-mode)
 
+;; CC mode
+(use-package cc-mode
+  :ensure nil
+  :init
+  (setq c-default-style "stroustrup")
+  (setq c-basic-indent 2)
+  (setq c-basic-offset 2))
+
+;; Rust
+(use-package rust-mode
+  :ensure t
+  :straight t
+  :init
+  (setq rust-basic-indent 2)
+  (setq rust-indent-offset 2)
+  (setq rust-ts-mode-basic-indent 2)
+  (setq rust-ts-mode-indent-offset 2))
+
+;; TypeScript
+(use-package typescript-mode
+  :ensure t
+  :straight t
+  :config
+  (setq indent-tabs-mode nil))
+
+;; Treesitter
 (use-package treesit-auto
   :ensure t
   :straight t
   :after emacs
   :custom
   (treesit-auto-install nil)
+  :mode
+  (("\\.tsx\\'" . tsx-ts-mode)
+   ("\\.js\\'"  . typescript-ts-mode)
+   ("\\.mjs\\'" . typescript-ts-mode)
+   ("\\.mts\\'" . typescript-ts-mode)
+   ("\\.cjs\\'" . typescript-ts-mode)
+   ("\\.ts\\'"  . typescript-ts-mode)
+   ("\\.jsx\\'" . tsx-ts-mode)
+   ("\\.rs\\'" . rust-ts-mode)
+   ("\\.json\\'" .  json-ts-mode))
   :init
   (setq treesit-language-source-alist
         '(;; (c          . ("https://github.com/tree-sitter/tree-sitter-c"          "v0.20.7" "src"))
           (haskell    . ("https://github.com/tree-sitter/tree-sitter-haskell"    "master"  "src"))
           (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1" "src"))
           (json       . ("https://github.com/tree-sitter/tree-sitter-json"       "v0.24.8" "src"))
+          (rust       . ("https://github.com/tree-sitter/tree-sitter-rust"       "v0.23.0" "src"))
           (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "master"  "typescript/src"))))
   :config
   ;; (treesit-auto-add-to-auto-mode-alist 'all)

@@ -1,7 +1,8 @@
 ;;; `completions-config.el' --- Configuration related to completions
 
 (use-package which-key
-  :ensure nil
+  :ensure t
+  :straight t
   :defer t
   :hook
   (after-init . which-key-mode))

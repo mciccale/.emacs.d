@@ -17,6 +17,23 @@
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
 
+  ;; (define-key evil-normal-state-map (kbd "C-d")
+  ;;   		  (lambda ()
+  ;;   			(evil-scroll-down 0)
+  ;;   			(evil-scroll-line-to-center nil)))
+  ;; (define-key evil-visual-state-map (kbd "C-d")
+  ;;   		  (lambda ()
+  ;;   			(evil-scroll-down 0)
+  ;;   			(evil-scroll-line-to-center nil)))
+  ;; (define-key evil-normal-state-map (kbd "C-u")
+  ;;   		  (lambda ()
+  ;;   			(evil-scroll-up 0)
+  ;;   			(evil-scroll-line-to-center nil)))
+  ;; (define-key evil-visual-state-map (kbd "C-u")
+  ;;   		  (lambda ()
+  ;;   			(evil-scroll-up 0)
+  ;;   			(evil-scroll-line-to-center nil)))
+
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
 

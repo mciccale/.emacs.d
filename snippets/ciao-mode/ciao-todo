@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ciao-todo
+# key: <todo
+# --
+% TODO: $1

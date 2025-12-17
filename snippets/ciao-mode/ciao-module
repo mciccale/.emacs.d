@@ -2,5 +2,5 @@
 # name: ciao-module
 # key: <mod
 # --
-:- module($0, [$1], [$2]).
-$3
+:- module($1, [], []).
+$2

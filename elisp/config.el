@@ -64,26 +64,11 @@
   (prog-mode . (lambda () (setq show-trailing-whitespace t)))
   (text-mode . (lambda () (setq show-trailing-whitespace t)))
   (ciao-mode . (lambda () (setq show-trailing-whitespace t)))
-  :config
-  (setq system-time-locale "C")
-  (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 120)
-  (when (eq system-type 'darwin)
-    (setq mac-command-modifier 'meta)
-    (setq mac-option-modifier 'none)
-    (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 150))
-
-  (setq custom-file (locate-user-emacs-file "custom-vars.el")) ;; Specify the custom file path.
-  (load custom-file 'noerror 'nomessage)                       ;; Load the custom file quietly, ignoring errors.
-
-  ;; Vertical divisor (│).
-  (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?│))
-
   :init
   (menu-bar-mode 0)
   (tool-bar-mode 0)
-  (when scroll-bar-mode
-    (scroll-bar-mode 0))
-
+  (when scroll-bar-mode (scroll-bar-mode 0))
+  (editorconfig-mode 1)        ;; Enable reading `.editorconfig' files
   (global-hl-line-mode -1)     ;; Disable highlight of the current line
   (recentf-mode 1)             ;; Enable tracking of recently opened files.
   (savehist-mode 1)            ;; Enable saving of command history.
@@ -91,6 +76,7 @@
   (winner-mode 1)              ;; Enable winner mode to easily undo window configuration changes.
   (xterm-mouse-mode 1)         ;; Enable mouse support in terminal mode.
   (file-name-shadow-mode 1)    ;; Enable shadowing of filenames for clarity.
+  (goto-address-mode 1)        ;; Enable clickable links everywhere
 
   ;; Set the default coding system for files to UTF-8.
   (modify-coding-system-alist 'file "" 'utf-8)
@@ -111,7 +97,20 @@
 ;; Loading time : %s
 
 "
-                         (emacs-init-time)))))))
+                         (emacs-init-time))))))
+  :config
+  (setq treesit-font-lock-level 4)
+  (setq system-time-locale "C")
+  (setq trash-directory (concat (getenv "HOME") "/Trash/"))
+  (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 110)
+  (when (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier 'none)
+    (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 130))
+  (setq custom-file (locate-user-emacs-file "custom-vars.el")) ;; Specify the custom file path.
+  (load custom-file 'noerror 'nomessage)                       ;; Load the custom file quietly, ignoring errors.
+  (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?│)) ;; Vertical divisor (│).
+  (setq grep-command "rg -nS --no-heading " grep-use-null-device nil)) ;; Use ripgrep
 
 ;; Centralize backup files under .emacs.d
 (setopt make-backup-file-name-function
@@ -156,7 +155,6 @@
   :custom
   (dired-listing-switches "-lahv --group-directories-first")
   (dired-dwim-target t)
-  ;; (dired-kill-when-opening-new-dired-buffer t)
   :config
   (when (eq system-type 'darwin)
     (let ((gls (executable-find "gls")))
@@ -182,13 +180,11 @@
 (unless (eq system-type 'darwin)
   (require 'mail-config))
 
-;; Load theme
 (use-package ef-themes
   :ensure t
   :straight t
-  :defer t)
-
-(load-theme 'ef-arbutus :no-confirm)
+  :config
+  (load-theme 'ef-arbutus :no-confirm))
 
 ;; Provide ourselves
 (provide 'config)
