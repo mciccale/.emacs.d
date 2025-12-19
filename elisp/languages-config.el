@@ -132,7 +132,8 @@
   :hook
   ((prog-mode . yas-minor-mode-on)
    (text-mode . yas-minor-mode-on)
-   (ciao-mode . yas-minor-mode-on)))
+   (ciao-mode . yas-minor-mode-on)
+   (ciao-inferior-mode . yas-minor-mode-on)))
 
 ;; Markdown
 (use-package markdown-mode
