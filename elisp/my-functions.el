@@ -1,4 +1,4 @@
-;;; `my-functions.el' --- My own functions
+;;; `my-functions.el' --- My own functions  -*- lexical-binding: t; -*-
 
 (defun my/get-pwd (&rest keys)
   "Decrypt a password"

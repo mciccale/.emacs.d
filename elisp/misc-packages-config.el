@@ -1,4 +1,4 @@
-;;; `misc-packages-config.el' --- Some miscellaneous packages
+;;; `misc-packages-config.el' --- Some miscellaneous packages  -*- lexical-binding: t; -*-
 
 (use-package magit
   :ensure t

@@ -1,4 +1,4 @@
-;;; `languages-config.el' --- (Programming) languages configuration
+;;; `languages-config.el' --- (Programming) languages configuration  -*- lexical-binding: t; -*-
 
 ;; Ciao
 (if (file-exists-p "~/clip/Systems/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el")

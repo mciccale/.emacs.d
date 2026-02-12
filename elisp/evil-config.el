@@ -1,4 +1,4 @@
-;;; evil-config.el --- Evil mode configuration
+;;; evil-config.el --- Evil mode configuration  -*- lexical-binding: t; -*-
 
 ;; Evil mode
 (use-package evil

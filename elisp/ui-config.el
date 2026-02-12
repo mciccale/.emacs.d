@@ -1,4 +1,4 @@
-;;; `ui-config.el' --- UI configuration and packages
+;;; `ui-config.el' --- UI configuration and packages  -*- lexical-binding: t; -*-
 
 ;; Mode-line
 (use-package doom-modeline

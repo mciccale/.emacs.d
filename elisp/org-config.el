@@ -1,4 +1,4 @@
-;;; org-config.el --- Org-mode configuration
+;;; org-config.el --- Org-mode configuration  -*- lexical-binding: t; -*-
 
 ;; Org-mode
 (use-package org

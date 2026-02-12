@@ -1,4 +1,4 @@
-;;; config.el --- My Emacs configuration (using `straight.el')
+;;; config.el --- My Emacs configuration (using `straight.el')  -*- lexical-binding: t; -*-
 
 ;; Performance hacks
 (setq gc-cons-threshold #x40000000)
@@ -106,7 +106,7 @@
   (when (eq system-type 'darwin)
     (setq mac-command-modifier 'meta)
     (setq mac-option-modifier 'none)
-    (set-face-attribute 'default nil :family "JetBrainsMono NF" :height 130))
+    (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font Propo" :height 130))
   (setq custom-file (locate-user-emacs-file "custom-vars.el")) ;; Specify the custom file path.
   (load custom-file 'noerror 'nomessage)                       ;; Load the custom file quietly, ignoring errors.
   (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?│)) ;; Vertical divisor (│).

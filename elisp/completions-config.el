@@ -1,4 +1,4 @@
-;;; `completions-config.el' --- Configuration related to completions
+;;; `completions-config.el' --- Configuration related to completions  -*- lexical-binding: t; -*-
 
 (use-package which-key
   :ensure t
