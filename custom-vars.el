@@ -1,4 +1,4 @@
-;;; `custom-vars.el' --- Customize variables file
+;;; `custom-vars.el' --- Customize variables file  -*- lexical-binding: t; -*-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -7,6 +7,12 @@
  ;; If there is more than one, they won't work right.
  '(TeX-modes
    '(tex-mode plain-tex-mode texinfo-mode latex-mode doctex-mode))
+ '(custom-safe-themes
+   '("ed2efc874021b54144b9ed9874e4d9c036090488aeabe19c9ac28576a162ec12"
+	 "2c7dc80264de0ba9409d4ebb3c7b31cf8e4982015066174c786f16a672db71b2"
+	 "677e3d3d9ca354bfa2422287bc8ef048a759cd5009493e75197d3a3ab3590c58"
+	 "546f3e8c4cb46043df1f646322c4b57049fc4c31fdf96e41db077c3408660057"
+	 default))
  '(font-latex-fontify-sectioning 1.3))
 
 (custom-set-faces

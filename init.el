@@ -1,4 +1,4 @@
-;;; `init.el' --- Entrypoint of Emacs config
+;;; `init.el' --- Entrypoint of Emacs config  -*- lexical-binding: t; -*-
 
 ;; Update load-path
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
